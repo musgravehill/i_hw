@@ -1,0 +1,254 @@
+@charset "UTF-8";
+    .torso .container .img-max {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    }
+    .torso .container .row {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    }
+    .torso .container .m-content h3:first-child {
+    margin: 0 0 26px!important;
+    }
+    .torso .container .m-content h3 {
+    margin: 26px 0!important;
+    }
+    .torso .container .m-content h4 {
+    margin: 20px 0!important;
+    }
+    .torso .container .m-content h3.BSC_Checkpoint {
+    color: #4B96E1;
+    background-image: url(/~/media/webrenewal/products/emc/emifil/knowhow/basic/chapter01-p1/chapter01-p1_img0024.ashx?la=en);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 42px!important;
+    line-height: 27px;
+    }
+    .BSC_ImageBox {
+    text-align: center !important;
+    }
+    .BSC_ImageBox .BSC_ImageBox_Image img {
+    display: inline-block !important;
+    }
+    .BSC_ImageBox .BSC_ImageBox_Caption {
+    margin: 0 0 10px;
+    font-size: 14px;
+    }
+    .BSC_CheckpointBox {
+    border: 3px solid #4B96E1;
+    border-radius: 9px;
+    padding: 18px 15px 8px 15px;
+    }
+    #BSC_h2Box {
+    color:#4B96E1;
+    }
+    /* change 0813 */
+    /* For LeftMenu */
+    #BSC_Left_TitleImage {
+    margin-bottom: 2px;
+    }
+    #BSC_Left_Menus {
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    font-size: 93%;
+    }
+    #BSC_Left_Menus .active {
+    color: #333;
+    cursor: pointer;
+    }
+    #BSC_Left_Menus .passive {
+    color: #AAA;
+    background-color: #F5F5F5;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    line-height: 1.3em;
+    }
+    #BSC_Left_Menus .BSC_Left_Menu_Header.BSC_Current {
+    background-image: url(/~/media/webrenewal/products/emc/emifil/knowhow/basic/left_header_bg1.ashx?la=en);
+    background-repeat: no-repeat;
+    color: #FFF;
+    padding-bottom: 8px;
+    border: none;
+    }
+    #BSC_Left_Menus .BSC_Left_Menu_Header {
+    background-image: url(/~/media/webrenewal/products/emc/emifil/knowhow/basic/left_header_bg0.ashx?la=en);
+    background-repeat: no-repeat;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    }
+    #BSC_Left_Menus .BSC_Left_Menu_Header.passive {
+    background-image: url('');
+    }
+    /* LeftMenu Color */
+    #BSC_Left_Menus .BSC_Left_Menu_Header.BSC_Current a {
+    color: #FFF;
+    }
+    #BSC_Left_Menus .BSC_Left_Menu ul {
+    padding: 0px 4px 4px 4px;
+    display: none;
+    background-color: #e7eff7;
+    }
+    #BSC_Left_Menus .BSC_Left_Menu li {
+    border-top: 1px dotted #aaa;
+    padding: 10px 4px 8px 4px;
+    }
+    #BSC_Left_Menus .BSC_Left_Menu li a {
+    text-decoration: none;
+    color: #5b6770;
+    }
+    #BSC_Left_Menus .BSC_Left_Menu li.BSC_Li_First {
+    border: none;
+    }
+    /* LeftMenu Indent */
+    #BSC_Left_Menus ul.BSC_nums_Left_Menu {
+    margin-left: 0px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    }
+    #BSC_Left_Menus ul.BSC_nums_Left_Menu li {
+    position: relative;
+    list-style: none;
+    line-height: 1.2em; /* 1.3em以上にすると英IE6,7でdotted罫線が消える */
+    padding-left: 32px;
+    }
+    #BSC_Left_Menus ul.BSC_nums_Left_Menu li span {
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    }
+    * html #BSC_Left_Menus ul.BSC_nums_Left_Menu li span { top: 1.0em; left: -30px }    /* IE6 */
+    *:first-child+html #BSC_Left_Menus ul.BSC_nums_Left_Menu li span { top: 1.0em; }    /* IE7 */
+    #ReferenceArea.BSC_ReferenceArea {
+    margin-left: 0px;
+    padding-top: 10px;
+    }
+    #BSC_PageIndex {
+    margin-top: 25px;
+    text-align: center;
+    }
+    #BSC_PageIndex ul {
+    list-style-type: none;
+    }
+    #BSC_PageIndex li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 12px;
+    border-radius: 7px;
+    color: #000;
+    overflow: hidden;
+    border: 3px solid #FFF;
+    line-height: 175%;
+    }
+    #BSC_PageIndex li div {
+    background-color:  #FF6347;
+    border: 1px solid #FF6347;
+    border-radius: 4px;
+    }
+    #BSC_PageIndex li.BSC_PageIndex_Active div {
+    background-color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    color: #DC143C;
+    font-weight: bold;
+    padding: 0px 8px;
+    }
+    #BSC_PageIndex li a {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    color: #FFF;
+    text-decoration: none;
+    padding: 0px 8px;
+    background: none;
+    }
+    .BSC_caption {
+    position: relative;
+    text-align: right;
+    top: -15px;
+    height: 25px;
+    margin-right: 50px;
+    }
+    .pagetop{
+    text-align: right;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    }
+    .pagetop a{
+    background: url(/~/media/webrenewal/products/emc/emifil/knowhow/basic/basic_img0012.ashx?la=en) 0 50% no-repeat;
+    padding-left: 10px;
+    }
+    
+    
+    .BSC_CheckpointBox ul{
+    list-style-type: none;
+    padding: 0;
+    }
+    .BSC_CheckpointBox ul li {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 18px;
+    background-image: url(/~/media/webrenewal/products/emc/emifil/knowhow/basic/basic_img0008.ashx?la=en);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 25px;
+    line-height: 20px;
+    }
+    
+    
+    ol.BSC_nums {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    }
+    ol.BSC_nums li {
+    position: relative;
+    margin-left: 40px;
+    margin-bottom: 0.5em;
+    }
+    ol.BSC_nums li span.liMark {
+    position: absolute;
+    top: -1px;
+    left: -40px;
+    width: 34px;
+    text-align: right;
+    }
+    /*add20170207*/
+    .media-table{
+    width:100%;
+    border:1px solid #000;
+    font-size:13px;
+    margin-bottom:15px;
+    }
+    .media-table thead th{
+    background:#ddd;
+    border-bottom:1px solid #000;
+    border-left:1px solid #000;
+    text-align:center;
+    vertical-align:middle;
+    padding:5px;
+    }
+    .media-table tbody td{
+    border-bottom:1px solid #000;
+    border-left:1px solid #000;
+    text-align:center;
+    vertical-align:middle;
+    padding:5px;
+    }
+    .BSC_table_Caption{
+    margin: 0 0 10px;
+    font-size: 14px;
+    text-align:center;
+    }
+    .BSC_chapter_mb20{
+    margin-bottom:20px;
+    }
+    .BSC_chapter_mb40{
+    margin-bottom:40px;
+    }
+    .mb0{
+    margin-bottom:0 !important;
+    }

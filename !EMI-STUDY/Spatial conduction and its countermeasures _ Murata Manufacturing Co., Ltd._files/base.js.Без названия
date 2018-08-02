@@ -1,0 +1,153 @@
+/* bsc_logic.js */
+/*  左メニューの開閉をアニメーション化   */
+/*  2014/02/28 tomiyama     */
+
+var BSC_Logic = (function(){
+    var out = {};
+        
+        if (!Array.indexOf) {
+            Array.prototype.indexOf = function(o) {
+                for (var i in this) {
+                    if (this[i] == o) {
+                    return i;
+                    }
+                }
+                return -1;
+            }
+        };
+        
+        var showMenu = function(numCurrentMenuId,newOpen){
+            var id = String(numCurrentMenuId);
+            var wrapper = $("#BSC_Left_Menu_" + id);
+            var header = $("#BSC_Left_Menu_"+ id +"_Header");
+                header.addClass("BSC_Current");
+            var arrImg = wrapper.find("img");
+                arrImg.attr("src","../images/menuArrow1.gif");
+            var list = wrapper.find("ul");
+                if(newOpen!=0){
+                    /*  遅延表示する  */
+                    setTimeout(function(){list.slideDown(200)},200);
+                }
+                else{
+                    /*  0=ページが開いた時は遅延表示しない  */
+                    list.css({"display":"block"});
+                }
+        };
+
+        var hideMenu = function(numCurrentMenuId){
+            var id = String(numCurrentMenuId);
+            var wrapper = $("#BSC_Left_Menu_" + id);
+            var header = $("#BSC_Left_Menu_"+ id +"_Header");
+                header.removeClass("BSC_Current");
+            var arrImg = wrapper.find("img");
+                arrImg.attr("src","../images/menuArrow0.gif");
+            var list = wrapper.find("ul");
+                /*  遅延表示する  */
+                list.slideUp(100);
+        };
+
+        var clearMenu = function(){
+            var menus = $(".BSC_Left_Menu");
+            $.each(menus, function(i, val) {
+                var c = i + 1;
+                hideMenu(c);
+            });
+        };
+
+        out.isArrayElement = function(array,val){
+            var pos = array.indexOf(val);
+            if(pos === -1){
+                return false;
+            } else {
+                return true;
+            }
+        };
+
+        out.setLeftMenuFocus = function(numCurrentMenuId){
+            /*  0=ページが開いた時  */
+            showMenu(numCurrentMenuId,0);
+        };
+
+        out.clickLeftMenuHeaderHandler = function(numCurrentMenuId){
+            var id = String(numCurrentMenuId);
+            var wrapper = $("#BSC_Left_Menu_" + id);
+            var header = $("#BSC_Left_Menu_"+ id +"_Header");
+            var list = wrapper.find("ul");
+            if(list.attr("style")){
+                /*  閉じているメニューだけ反応させる  */
+                if(list.attr("style").indexOf("block") < 0){
+                    clearMenu();
+                    showMenu(id);
+                }
+            }
+            else{
+                clearMenu();
+                showMenu(id);
+            }
+        };
+
+        out.launchPrinter = function(){
+            function print_out() {
+                /* print() が使えるブラウザかどうかを判断 */
+                if (navigator.userAgent.match(/msie (\d)/i))
+                v = (eval(RegExp.$1) >= 5) ? 1 : 0;
+                else if (self.innerWidth)
+                v = (eval(navigator.appVersion.charAt(0)) >= 4) ? 1 : 0;
+                else v = 0;
+
+                /* print() が使えるブラウザなら印刷を実行 */
+                if (v) self.print();
+                else alert("お使いのブラウザではこの機能は利用できません");
+                }
+            print_out();
+        };
+
+        out.addBookmark = function(title,url){
+            if (window.sidebar) {
+                window.sidebar.addPanel(title, url,"");
+            } else if( document.all ) {
+                window.external.AddFavorite( url, title);
+            } else if( window.opera && window.print ) {
+                return true;
+            }
+        };
+
+
+    return out;
+})();
+
+/* bsc_handler.js */
+$(function(){
+
+    $(".BSC_Left_Menu_Header").click(function(){
+        var attrId = $(this).attr("ref");
+        var attrClass = $(this).attr("class");
+        var arrAttrClass = attrClass.split(" ");
+        if( BSC_Logic.isArrayElement(arrAttrClass,"active") ){
+            BSC_Logic.clickLeftMenuHeaderHandler(attrId);
+        }
+    });
+
+    $("#BSC_ReadtimeBox_Print").click(function(){
+        BSC_Logic.launchPrinter();
+    });
+
+    $(".BSC_PageIndex_Passive_Parent .BSC_PageIndex_Passive a").hover(function(){
+        var me = $("#BSC_PageIndex_Passive_" + $(this).attr("id"));
+        me.css({"border-color":"#FFDFA9"});
+        me.find(".BSC_PageIndex_Passive").css({"border-color":"#DC143C"});
+    },function(){
+        var me = $("#BSC_PageIndex_Passive_" + $(this).attr("id"));
+        me.css({"border-color":"#FFF"});
+        me.find(".BSC_PageIndex_Passive").css({"border-color":"#FF6347"});
+    });
+
+    $(".BSC_PageIndex_Passive_Parent").bind("mousedown",function(){
+        $(this).find(".BSC_PageIndex_Passive").css({"background-color":"#DC143C","border-color":"#FF6347"});
+    });
+
+    $(".BSC_PageIndex_Passive_Parent").bind("mouseout",function(){
+        $(this).find(".BSC_PageIndex_Passive").css({"background-color":"#FF6347","border-color":"#FF6347"});
+    });
+
+});

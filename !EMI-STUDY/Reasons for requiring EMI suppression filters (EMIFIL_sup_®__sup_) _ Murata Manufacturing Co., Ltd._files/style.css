@@ -1,0 +1,5 @@
+@charset "UTF-8";
+/* chapter01-p1.html */
+    .torso .container .m-content h3.BSC_Checkpoint {
+    background-image: url(../images/pen.png) !important;
+    }
